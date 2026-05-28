@@ -20,76 +20,88 @@ Before and after images showcasing the seam carving effect.
 
 The input image is on the left and the result of the algorithm is on the right.
 
-<h3><strong>Vertical Seam Removal</strong></h3>
-
-<img src="https://github.com/user-attachments/assets/a5fd7851-9a96-49bb-a0a9-60b8972aff66" alt="Description of image" height="300"/>
+<img src="https://github.com/user-attachments/assets/a5fd7851-9a96-49bb-a0a9-60b8972aff66" alt="Description of image" height="400"/>
 
 <img src="https://github.com/user-attachments/assets/c4277ee1-de84-40f8-8e04-36216566b1d8" alt="Resized Image" height="300"/>
 
-<h3><strong>Horizontal Seam Removal</strong></h3>
-
 <img src="https://github.com/user-attachments/assets/1420848c-34c3-48de-a5de-2cad5600bb8d" alt="Image 1" width="400"/>
 
-<img src="https://github.com/user-attachments/assets/becca250-4f0c-4b67-be7d-e3f1f1896741" alt="Image 2" width="400"/>
+<img src="https://github.com/user-attachments/assets/becca250-4f0c-4b67-be7d-e3f1f1896741" alt="Image 2" width="300"/>
 
 
-<h2><strong>Requirements</strong></h2>
 
-    OpenCV: Used for image processing tasks such as extracting and generating images.
-    Python or C++: For implementing the seam carving algorithm.
-    No C++ STL: The implementation must avoid using the C++ Standard Template Library (STL).
+---
 
-<h2><strong>Usage Instructions</strong></h2>
+## Build Instructions
 
-    Clone the repository:
+### Requirements
+- C++17 or higher
+- OpenCV
+- CMake
 
-    bash
+### Build Steps
 
-git clone https://github.com/Archit-10/Image_Resizing_using_Seam_Carving_Algorithm.git
+```bash
+git clone https://github.com/Archit-10/content-aware-image-resizing.git
+cd content-aware-image-resizing
 
-cd Image_Resizing_using_Seam_Carving_Algorithm
+mkdir build
+cd build
 
-Install the required dependencies:
+cmake ..
+make
+```
 
-bash
+## Run the Program
 
-pip install opencv-python  # For Python users
+```bash
+./seam_carver
 
-Run the algorithm:
+You will be prompted to enter target dimensions:
 
-bash
+width height
 
-    python seam_carving.py --input path/to/image.jpg --output path/to/resized_image.jpg --new_width 300
+Example input:
+
+400 300
+
+Output is saved to:
+
+assets/output/resized.png
+```
 
 <h2><strong>Performance Metrics</strong></h2>
 
     Time Complexity: O(NM) for finding the optimal seam, where N is the height and M is the width of the image.
     Memory Usage: Memory usage is proportional to the size of the image, as additional space is required for energy and cost matrices.
 
-<h2><strong>Challenges Faced</strong></h2>
+## Challenges Faced
 
-During development, I encountered challenges with seam identification in images with complex patterns. To address this, I implemented multiple energy functions to improve accuracy.
-Future Improvements
+Handling complex textures and preserving important edges during seam detection.
 
-    Optimize performance for larger images using parallel processing.
-    Extend the algorithm to handle video resizing.
-    Implement an interactive GUI for real-time resizing.
 
-<h2><strong>Testing</strong></h2>
+## Improvement
 
-The implementation includes unit tests to validate the correctness of the energy calculation and seam removal processes. Performance benchmarks have been conducted to assess the algorithm's efficiency.
-Tech Stack
+Used gradient-based energy to better preserve key visual structures like edges and objects.
 
-    Programming Language: Python / C++
+## QA 
+
+- Verified energy computation on sample images
+- Tested seam removal across multiple resizing iterations
+- Visually inspected output quality after resizing
+
+## Tech Stack
+
+    Programming Language: C++
     Libraries: OpenCV
 
 <h2><strong>Contributions</strong></h2>
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these guidelines:
+Contributions are welcome! If you would like to contribute to this project, please follow these guidelines:
 
     Fork the repository.
     Create a new branch for your feature or bug fix.
-    Submit a pull request detailing your changes.    
+    Submit a PR detailing your changes.    
 
 
 
