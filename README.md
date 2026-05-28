@@ -2,8 +2,7 @@
 
 Introduction
 
-Seam carving is a content-aware image resizing technique that reduces the size of an image by removing seams of pixels with the lowest energy. This technique helps preserve the most important features of the image while resizing.
-Features
+Seam carving is a content-aware image resizing technique that removes low-importance pixel paths to reduce image size but preserving important visual details.
 
 <h2><strong>Features</strong></h2>
 
