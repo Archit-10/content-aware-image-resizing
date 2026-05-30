@@ -62,25 +62,28 @@ vector<int> findLowestEnergySeam(
     for (int y = height - 2; y >= 0; --y)
     {
         int x = seam[y + 1];
+        int bestX = x;
+        double bestVal = dp[y][x];
 
-        if (x > 0 && dp[y][x - 1] < dp[y][x])
+        if (x > 0 && dp[y][x - 1] < bestVal)
         {
-            seam[y] = x - 1;
+            bestVal = dp[y][x - 1];
+            bestX = x - 1;
         }
-        else if (x < width - 1 && dp[y][x + 1] < dp[y][x])
+
+        if (x < width - 1 && dp[y][x + 1] < bestVal)
         {
-            seam[y] = x + 1;
+            bestVal = dp[y][x + 1];
+            bestX = x + 1;
         }
-        else
-        {
-            seam[y] = x;
-        }
+
+        seam[y] = bestX;
     }
 
     return seam;
 }
 
-// Function to remove a seam from the image
+// Function to remove a single vertical seam from the image
 void removeSeam(
     Mat &image,
     const vector<int> &seam)
