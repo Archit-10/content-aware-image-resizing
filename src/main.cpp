@@ -8,7 +8,7 @@ using namespace cv;
 
 int main()
 {
-    Mat inputImage = imread("../assets/input/sample1.png");
+    Mat inputImage = imread("assets/input/sample1.png");
     if (inputImage.empty())
     {
         cerr << "Could not open or find the image!" << endl;
@@ -42,7 +42,7 @@ int main()
     imshow("Resized Image", resizedImage);
     waitKey(0);
     */
-    imwrite("../assets/output/resized.png", resizedImage);
+    imwrite("assets/output/resized.png", resizedImage);
 
     cout << "Resized image saved successfully!" << endl;
     return 0;

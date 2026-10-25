@@ -5,7 +5,7 @@ build/
 
 .vscode/
 .idea/
-
+seam_carver
 assets/output/
 
 .DS_Store
